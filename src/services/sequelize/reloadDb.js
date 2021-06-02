@@ -2,7 +2,7 @@
 import models from '.'
 
 try {
-  models.sequelize.sync({ alter: true }).then(() => {
+  models.sequelize.sync({ alter: false }).then(() => {//models.sequelize.sync({ alter: true }).then(() => {
     console.log('[SUCCESS] DATABASE HAS BEEN SYNC (UPDATED)')
   })
 } catch (err) {

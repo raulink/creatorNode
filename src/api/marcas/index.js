@@ -23,7 +23,7 @@ const {
  * @apiError 401 Admin access only.
  */
 router.get('/',
-  token({ required: true, roles: ['admin'] }),
+  //token({ required: true, roles: ['admin'] }),
   query(),
   index)
 

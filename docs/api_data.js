@@ -626,5 +626,341 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "src/api/user/index.js",
     "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/marcass",
+    "title": "Create marcas",
+    "name": "Createmarcas",
+    "group": "marcas",
+    "permission": [
+      {
+        "name": "master",
+        "title": "Master access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>Master access_token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Sucess 201": [
+          {
+            "group": "Sucess 201",
+            "type": "Object",
+            "optional": false,
+            "field": "marcas",
+            "description": "<p>marcas's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>Master access only.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "409",
+            "description": "<p>Email already registered.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/marcas/index.js",
+    "groupTitle": "marcas"
+  },
+  {
+    "type": "delete",
+    "url": "/marcass/:id",
+    "title": "Delete marcas",
+    "name": "Deletemarcas",
+    "group": "marcas",
+    "permission": [
+      {
+        "name": "admin",
+        "title": "Admin access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>marcas access_token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 204": [
+          {
+            "group": "Success 204",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>Admin access only.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>marcas not found.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/marcas/index.js",
+    "groupTitle": "marcas"
+  },
+  {
+    "type": "get",
+    "url": "/marcass/:id",
+    "title": "Retrieve marcas",
+    "name": "Retrievemarcas",
+    "group": "marcas",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "marcas",
+            "description": "<p>marcas's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>marcas not found.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/marcas/index.js",
+    "groupTitle": "marcas"
+  },
+  {
+    "type": "get",
+    "url": "/marcass",
+    "title": "Retrieve marcass",
+    "name": "Retrievemarcass",
+    "group": "marcas",
+    "permission": [
+      {
+        "name": "admin",
+        "title": "Admin access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>marcas access_token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>Query to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1..30",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "1",
+            "description": "<p>Page number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1..100",
+            "optional": true,
+            "field": "limit",
+            "defaultValue": "30",
+            "description": "<p>Amount of returned items.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "sort",
+            "defaultValue": "-createdAt",
+            "description": "<p>Order of returned items.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "fields",
+            "description": "<p>Fields to be returned.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "marcass",
+            "description": "<p>List of marcass.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>Admin access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/marcas/index.js",
+    "groupTitle": "marcas"
+  },
+  {
+    "type": "put",
+    "url": "/marcass/:id",
+    "title": "Update marcas",
+    "name": "Updatemarcas",
+    "group": "marcas",
+    "permission": [
+      {
+        "name": "marcas"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>marcas access_token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "marcas",
+            "description": "<p>marcas's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>Current marcas or admin access only.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>marcas not found.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/marcas/index.js",
+    "groupTitle": "marcas"
   }
 ] });
