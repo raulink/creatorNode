@@ -1,26 +1,18 @@
-'use strict';
+'use strict'
+import lecturaFactory from '../src/api/lectura/lectura.factory'
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+  up: async (queryInterface, Sequelize) => {
+    let lecturasArray = []
+    const lecturas = await lecturaFactory.buildMany('lectura', 100)
+    lecturas.map(lecturaFactory => {
+      lecturasArray.push(lecturaFactory.dataValues)
+    })
+    lecturasArray = lecturasArray.map(lectura => { delete lectura.id; return lectura })
+    return queryInterface.bulkInsert('lecturas', lecturasArray, {})
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+    return queryInterface.bulkDelete('lecturas', null, {})
   }
-};
+}
