@@ -15,14 +15,64 @@
  *
  */
 export const lecturaDataSchema = {
-        fkequipo: 
+        fkEquipo: 
    {  
        type:  Number,
        required: true 
    }, 
-    fkcatplanUni: 
+    fkCatPlanUni: 
    {  
        type:  Number,
+       required: true 
+   }, 
+    fc_lect: 
+   {  
+       type:  Date,
+       required: true 
+   }, 
+    lect_base: 
+   {  
+       type:  Number,
+       required: true 
+   }, 
+    lect: 
+   {  
+       type:  Number,
+       required: true 
+   }, 
+    es_ini_mes: 
+   {  
+       type:  Boolean,
+       required: true 
+   }, 
+    es_lect_real: 
+   {  
+       type:  Boolean,
+       required: true 
+   }, 
+    es_lect_1: 
+   {  
+       type:  Boolean,
+       required: true 
+   }, 
+    es_lect_fuera_serv: 
+   {  
+       type:  Boolean,
+       required: true 
+   }, 
+    lect_fin_mes: 
+   {  
+       type:  Number,
+       required: true 
+   }, 
+    fd: 
+   {  
+       type:  String,
+       required: true 
+   }, 
+    tipo_origen: 
+   {  
+       type:  Boolean,
        required: true 
    } 
 
@@ -40,14 +90,64 @@ export const lecturaAttributes = (DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },    
-      fkequipo: 
+      fkEquipo: 
    {  
        type:  DataTypes.INTEGER,
        allowNull: false 
    }, 
-    fkcatplanUni: 
+    fkCatPlanUni: 
    {  
        type:  DataTypes.INTEGER,
+       allowNull: false 
+   }, 
+    fc_lect: 
+   {  
+       type:  DataTypes.DATE,
+       allowNull: false 
+   }, 
+    lect_base: 
+   {  
+       type:  DataTypes.INTEGER,
+       allowNull: false 
+   }, 
+    lect: 
+   {  
+       type:  DataTypes.INTEGER,
+       allowNull: false 
+   }, 
+    es_ini_mes: 
+   {  
+       type:  DataTypes.BOOLEAN,
+       allowNull: false 
+   }, 
+    es_lect_real: 
+   {  
+       type:  DataTypes.BOOLEAN,
+       allowNull: false 
+   }, 
+    es_lect_1: 
+   {  
+       type:  DataTypes.BOOLEAN,
+       allowNull: false 
+   }, 
+    es_lect_fuera_serv: 
+   {  
+       type:  DataTypes.BOOLEAN,
+       allowNull: false 
+   }, 
+    lect_fin_mes: 
+   {  
+       type:  DataTypes.INTEGER,
+       allowNull: false 
+   }, 
+    fd: 
+   {  
+       type:  DataTypes.STRING,
+       allowNull: false 
+   }, 
+    tipo_origen: 
+   {  
+       type:  DataTypes.BOOLEAN,
        allowNull: false 
    } 
   

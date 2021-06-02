@@ -13,8 +13,18 @@ import faker from 'faker'
  *
  */
 factory.define('lectura', models.lectura, {
-      fkequipo:  () => faker.random.number(),
-    fkcatplanUni:  () => faker.random.number()
+      fkEquipo:  () => faker.random.number(),
+    fkCatPlanUni:  () => faker.random.number(),
+    fc_lect:  () => Date.now(),
+    lect_base:  () => faker.random.number(),
+    lect:  () => faker.random.number(),
+    es_ini_mes:  () => false,
+    es_lect_real:  () => false,
+    es_lect_1:  () => false,
+    es_lect_fuera_serv:  () => false,
+    lect_fin_mes:  () => faker.random.number(),
+    fd:  () => faker.lorem.sentence(),
+    tipo_origen:  () => false
 
   ,createdAt: () => new Date(),
   updatedAt: () => new Date()

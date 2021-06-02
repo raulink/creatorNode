@@ -8,7 +8,7 @@ import { lecturaDataSchema } from './lectura.model'
 
 const router = new Router()
 const {
-        fkequipo,    fkcatplanUni,
+        fkEquipo,    fkCatPlanUni,    fc_lect,    lect_base,    lect,    es_ini_mes,    es_lect_real,    es_lect_1,    es_lect_fuera_serv,    lect_fin_mes,    fd,    tipo_origen,
 } = lecturaDataSchema
 
 /**

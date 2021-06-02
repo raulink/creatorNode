@@ -4,6 +4,7 @@ import auth from './auth'
 import passwordresetRouter from './passwordreset'
 import marcasRouter from './marcas'
 import equipoRouter from './equipo'
+
 import lecturaRouter from './lectura'
 /** nextImport */
 
@@ -37,6 +38,7 @@ router.use('/auth', auth)
 router.use('/passwordresets', passwordresetRouter)
 router.use('/marcass', marcasRouter)
 router.use('/equipos', equipoRouter)
+
 router.use('/lecturas', lecturaRouter)
 /** nextApi */
 
