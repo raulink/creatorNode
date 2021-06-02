@@ -76,7 +76,7 @@ Object.keys(db).forEach(modelName => {
  * Assign just sequelize to the instance of the object Sequelize
  * and also a Sequelize default style as class without instance
  */
-sequelize.sync()
+sequelize.sync()  //Obliga a sincronizar la base de datos, quitar para trabajar con otra bd
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 module.exports = db
