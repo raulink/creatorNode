@@ -2,6 +2,7 @@ import { Router } from 'express'
 import user from './user'
 import auth from './auth'
 import passwordresetRouter from './passwordreset'
+import marcasRouter from './marcas'
 /** nextImport */
 
 const router = new Router()
@@ -32,6 +33,7 @@ const router = new Router()
 router.use('/users', user)
 router.use('/auth', auth)
 router.use('/passwordresets', passwordresetRouter)
+router.use('/marcass', marcasRouter)
 /** nextApi */
 
 export default router
